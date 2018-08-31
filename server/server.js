@@ -14,6 +14,14 @@ io.on('connection' , socket=>{
 
     console.log("new user connected");
 
+
+    socket.on('createMessage',message=>{
+
+        console.log('createMessage', message);
+    });
+
+    socket.emit('newMessage',{from:"Andranik Host", text: "message text"});
+
     socket.on('disconnect', ()=>{
 
         console.log("user disconnected");
