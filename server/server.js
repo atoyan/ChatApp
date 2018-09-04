@@ -16,11 +16,17 @@ io.on('connection' , socket=>{
 
 
     socket.on('createMessage',message=>{
+       console.log('createMessage', message);
+       io.emit('newMessage', {
 
-        console.log('createMessage', message);
+        from: message.from,
+        text : message.text,
+        createdAt: new Date().getTime()
+
+       });
     });
 
-    socket.emit('newMessage',{from:"Andranik Host", text: "message text"});
+ 
 
     socket.on('disconnect', ()=>{
 

@@ -9,10 +9,6 @@
 
         
 
-        socket.emit('createMessage', {
-            from: "Andranik Clinet",
-            text: "some messaging text"
-        });
 
         socket.on('newMessage', function(message){
             console.log('newMessage',message);
